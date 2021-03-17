@@ -49,9 +49,6 @@ export default function CustomListItem({ id, chatName, enterChat, viewMessage })
                         <Title style={{ fontWeight: 'bold' }}>
                             {chatName}
                         </Title>
-                        {/* <Subtitle numberOfLines={1} ellipsizeMode='tail' >
-                            {chatMessages?.[0]?.displayName} : {chatMessages?.[0]?.message}
-                        </Subtitle> */}
                     </Content>
 
                 </ListItem>

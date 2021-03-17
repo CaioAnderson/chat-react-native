@@ -10,7 +10,7 @@ export default function ListContatosScreen({ navigation }){
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: 'Contatos',
+            title: 'Salas criadas',
             headerLeft: () => (
                 <TouchableOpacity style={{ marginLeft: 15 }} onPress={() => navigation.replace('Home')}>
                     <AntDesign name='arrowleft' size={24} color='white' />
