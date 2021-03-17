@@ -56,7 +56,7 @@ export default function HomeScreen({ navigation }) {
                     flexDirection: 'row', justifyContent: 'space-between',
                     width: 80, marginRight: 20
                 }}>
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.navigate('ListContatos')}>
                         <Ionicons name='person' size={24} color='black' />
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.navigate('AddChat')}>
@@ -73,7 +73,7 @@ export default function HomeScreen({ navigation }) {
             <ScrollView>
                 {chats.map(({ id, data: { chatName } }) => (
                     <CustomListItem key={id} id={id} chatName={chatName}
-                        enterChat={enterChat} />
+                        enterChat={enterChat} viewMessage={true}/>
                 ))}
 
             </ScrollView>

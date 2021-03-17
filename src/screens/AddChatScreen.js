@@ -12,6 +12,7 @@ export default function AddChatScreen({ navigation }) {
         await db.collection('chats').add({
             chatName: input
         }).then(() => {
+            setInput('')
             navigation.navigate('ListContatos');
         }).catch((error) => alert(error.message));
     }

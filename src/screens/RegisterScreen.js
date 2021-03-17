@@ -28,7 +28,7 @@ export default function RegisterScreen({ navigation }) {
                 authUser.user.updateProfile({
                     displayName: nome,
                     photoURL: imageURL ||
-                        "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png",
+                        "https://ibac.com.br/wp-content/uploads/2020/04/perfil-anonimo.jpg",
 
                 })
 

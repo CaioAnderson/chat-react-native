@@ -33,8 +33,6 @@ export default function ChatScreen({ navigation, route }) {
 
             setInput('');
         }
-
-
     }
 
     useLayoutEffect(() => {
@@ -46,12 +44,12 @@ export default function ChatScreen({ navigation, route }) {
                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
                     <Avatar
                     rounded
-                    source={{ uri: messages[0]?.data.photoURL || "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" }} />
+                    source={{ uri:  "https://ibac.com.br/wp-content/uploads/2020/04/perfil-anonimo.jpg" }} />
                     <Text style={{ fontWeight: 'bold', marginLeft: 10, fontSize: 16 }}>{chatName}</Text>
                 </View>
             ),
             headerLeft: () => (
-                <TouchableOpacity style={{ marginLeft: 15 }} onPress={() => navigation.goBack()}>
+                <TouchableOpacity style={{ marginLeft: 15 }} onPress={() => navigation.replace('Home')}>
                     <AntDesign name='arrowleft' size={24} color='white' />
                 </TouchableOpacity>
             ),

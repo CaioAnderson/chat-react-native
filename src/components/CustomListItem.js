@@ -5,7 +5,7 @@ import { db } from '../config/firebase';
 
 const { Content, Title, Subtitle } = ListItem;
 
-export default function CustomListItem({ id, chatName, enterChat }) {
+export default function CustomListItem({ id, chatName, enterChat, viewMessage }) {
 
     const [chatMessages, setChatMessages] = useState([]);
 
@@ -17,13 +17,14 @@ export default function CustomListItem({ id, chatName, enterChat }) {
         return unsubscribe;
     }, [])
 
-    return (
-        <>
+    if(viewMessage){
+        return(
+            <>
             {Boolean(chatMessages[0]) && (
                 <ListItem key={id} onPress={() => enterChat(id, chatName)}
                     style={styles.container} key={id} bottomDivider>
                     <Avatar rounded
-                        source={{ uri: chatMessages?.[0]?.photoURL || "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" }} />
+                        source={{ uri: "https://ibac.com.br/wp-content/uploads/2020/04/perfil-anonimo.jpg" }} />
 
                     <Content>
                         <Title style={{ fontWeight: 'bold' }}>
@@ -33,12 +34,29 @@ export default function CustomListItem({ id, chatName, enterChat }) {
                             {chatMessages?.[0]?.displayName} : {chatMessages?.[0]?.message}
                         </Subtitle>
                     </Content>
-
                 </ListItem>
             )}
+            </>
+        )
+    }else{
+        return(
+            <ListItem key={id} onPress={() => enterChat(id, chatName)}
+                    style={styles.container} key={id} bottomDivider>
+                    <Avatar rounded
+                        source={{ uri: "https://ibac.com.br/wp-content/uploads/2020/04/perfil-anonimo.jpg" }} />
 
-        </>
-    )
+                    <Content>
+                        <Title style={{ fontWeight: 'bold' }}>
+                            {chatName}
+                        </Title>
+                        {/* <Subtitle numberOfLines={1} ellipsizeMode='tail' >
+                            {chatMessages?.[0]?.displayName} : {chatMessages?.[0]?.message}
+                        </Subtitle> */}
+                    </Content>
+
+                </ListItem>
+        )
+    }
 }
 
 const styles = StyleSheet.create({
