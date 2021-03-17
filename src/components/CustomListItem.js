@@ -18,21 +18,26 @@ export default function CustomListItem({ id, chatName, enterChat }) {
     }, [])
 
     return (
-        <ListItem key={id} onPress={() => enterChat(id, chatName)}
-            style={styles.container} key={id} bottomDivider>
-            <Avatar rounded
-                source={{ uri: chatMessages?.[0]?.photoURL|| "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" }} />
+        <>
+            {Boolean(chatMessages[0]) && (
+                <ListItem key={id} onPress={() => enterChat(id, chatName)}
+                    style={styles.container} key={id} bottomDivider>
+                    <Avatar rounded
+                        source={{ uri: chatMessages?.[0]?.photoURL || "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" }} />
 
-            <Content>
-                <Title style={{ fontWeight: 'bold' }}>
-                    {chatName}
-                </Title>
-                <Subtitle numberOfLines={1} ellipsizeMode='tail' >
-                    { chatMessages?.[0]?.displayName } : { chatMessages?.[0]?.message }
-                </Subtitle>
-            </Content>
+                    <Content>
+                        <Title style={{ fontWeight: 'bold' }}>
+                            {chatName}
+                        </Title>
+                        <Subtitle numberOfLines={1} ellipsizeMode='tail' >
+                            {chatMessages?.[0]?.displayName} : {chatMessages?.[0]?.message}
+                        </Subtitle>
+                    </Content>
 
-        </ListItem>
+                </ListItem>
+            )}
+
+        </>
     )
 }
 

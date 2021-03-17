@@ -12,6 +12,7 @@ import RegisterScreen from './screens/RegisterScreen';
 import HomeScreen from './screens/HomeScreen';
 import AddChatScreen from './screens/AddChatScreen';
 import ChatScreen from './screens/ChatScreen';
+import ListContatosScreen from './screens/ListContatosScreen';
 
 export default function Routes() {
     return (
@@ -22,6 +23,7 @@ export default function Routes() {
                 <Screen name='Home' component={HomeScreen}/>
                 <Screen name='AddChat' component={AddChatScreen}/>
                 <Screen name='Chat' component={ChatScreen}/>
+                <Screen name='ListContatos' component={ListContatosScreen}/>
             </Navigator>
         </NavigationContainer>
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import {
-    View, Text, StyleSheet, SafeAreaView, ScrollView,
+    View, StyleSheet, SafeAreaView, ScrollView,
     TouchableOpacity
 } from 'react-native';
 import { Avatar } from 'react-native-elements';
@@ -8,7 +8,7 @@ import { Avatar } from 'react-native-elements';
 import { auth, db } from '../config/firebase';
 
 import CustomListItem from '../components/CustomListItem';
-import { AntDesign, Ionicons, } from '@expo/vector-icons';
+import { Ionicons, } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
 
 export default function HomeScreen({ navigation }) {
@@ -57,7 +57,7 @@ export default function HomeScreen({ navigation }) {
                     width: 80, marginRight: 20
                 }}>
                     <TouchableOpacity activeOpacity={0.5}>
-                        <AntDesign name='camerao' size={24} color='black' />
+                        <Ionicons name='person' size={24} color='black' />
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.navigate('AddChat')}>
                         <Ionicons name='add' size={24} color='black' />
